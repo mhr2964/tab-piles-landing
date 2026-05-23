@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Tab Piles</title>
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .legal { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+    .legal h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal .updated { color: var(--ink-mute); margin-bottom: 32px; }
+    .legal h2 { font-size: 1.25rem; margin-top: 32px; }
+    .legal p, .legal li { color: var(--ink-soft); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="brand"><img src="/icon.svg" alt="" width="28" height="28" /><span>Tab Piles</span></a>
+    <nav><a href="/">Home</a></nav>
+  </header>
+  <main class="legal">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: <!-- USER: set on first publish --></p>
+
+    <h2>What we collect — free tier</h2>
+    <p>Nothing. The free version of Tab Piles stores all data — pile names, tab URLs, tab titles, favicons, tags, and notes — exclusively in your browser's local IndexedDB. The extension does not contact any server. We do not run analytics, telemetry, or ad networks inside the extension.</p>
+
+    <h2>What we collect — Pro tier</h2>
+    <p>If you enable cloud sync on a paid Pro tier, Tab Piles sends your pile data (names, tab URLs, titles, tags, notes, snapshots if you've enabled that feature) to a Cloudflare Workers endpoint we operate, for the sole purpose of syncing between your own devices. Data is encrypted in transit (TLS) and at rest. We do not access, read, mine, or sell this data. We do not share it with any third party. If you cancel your Pro subscription or delete your account, your cloud-synced data is purged within 30 days.</p>
+
+    <h2>License validation</h2>
+    <p>To verify a Pro license key, Tab Piles sends the license key and a randomly-generated per-device instance ID to our Cloudflare Workers endpoint, which checks the key against the Lemon Squeezy license API. We cache the validation result locally in your browser for 24 hours. We log validation requests for fraud prevention (specifically: detecting license-key sharing across more than 5 devices). These logs are stored for 90 days and contain only the license key and instance ID — no personal data.</p>
+
+    <h2>Payments</h2>
+    <p>Payments are processed by <a href="https://www.lemonsqueezy.com/">Lemon Squeezy</a>, which acts as Merchant of Record. Lemon Squeezy collects payment information (name, billing address, card details) per their own <a href="https://www.lemonsqueezy.com/privacy">privacy policy</a>. We receive only your email address and the fact that you have a valid license. We do not see or store your payment details.</p>
+
+    <h2>Landing page analytics</h2>
+    <p>This website (tabpiles.app) uses privacy-respecting analytics (Plausible) to count page views. No cookies, no cross-site tracking, no personal data. If even that bothers you, blockers will not break the site.</p>
+
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:support@tabpiles.app">support@tabpiles.app</a> for any privacy question, data-deletion request, or to report a concern. We respond within 7 days.</p>
+  </main>
+</body>
+</html>

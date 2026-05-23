@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tab Piles — drop a research thread, pick it up next Tuesday</title>
+  <meta name="description" content="Save whole browser windows to named piles. Local-first Chrome extension for researchers, writers, and developers." />
+  <meta property="og:title" content="Tab Piles" />
+  <meta property="og:description" content="Drop a research thread, pick it up next Tuesday." />
+  <meta property="og:image" content="/screenshots/cws-1-hero.png" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="brand">
+      <img src="/icon.svg" alt="" width="28" height="28" />
+      <span>Tab Piles</span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#privacy">Privacy</a>
+      <a class="btn btn-primary" data-cws-url href="#">Add to Chrome</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Drop a research thread, pick it up next Tuesday.</h1>
+        <p class="tagline">Save whole browser windows to named <em>piles</em> — every tab, every favicon. No more 87-tab windows. No more &ldquo;I&rsquo;ll get back to this&rdquo; tabs you never do.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" data-cws-url href="#">Add to Chrome — free</a>
+          <a class="btn btn-ghost btn-lg" href="#pricing">See Pro</a>
+        </div>
+        <p class="micro">No account. No telemetry. 10-pile soft cap on the free tier.</p>
+      </div>
+      <div class="hero-shot">
+        <img src="/screenshots/cws-1-hero.png" alt="Tab Piles side panel showing four piles with tags and a cap meter" width="1280" height="800" />
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Built for the tab-heavy</h2>
+      <div class="feature-grid">
+        <article>
+          <img src="/screenshots/cws-3-palette.png" alt="Cmd+K command palette showing mixed pile and tab results" width="1280" height="800" />
+          <h3>Cmd+K to anywhere</h3>
+          <p>Fuzzy-search across every pile and every saved tab. Hit Enter, you&rsquo;re there.</p>
+        </article>
+        <article>
+          <img src="/screenshots/cws-4-archived.png" alt="Archived piles view" width="1280" height="800" />
+          <h3>Auto-archive at 30 days</h3>
+          <p>Piles you haven&rsquo;t touched in a month quietly move out of the way. Nothing&rsquo;s deleted — restore in one click.</p>
+        </article>
+        <article>
+          <img src="/screenshots/cws-2-detail.png" alt="Pile detail view with tag editor and tab list" width="1280" height="800" />
+          <h3>Tag, rename, restore</h3>
+          <p>Your piles, your filing system. Restore a whole pile to a fresh window and resume exactly where you left off.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <h2>Free for the way most people use a browser. Pro for the way you do.</h2>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul>
+            <li>Unlimited piles &amp; tabs</li>
+            <li>Local-first — no account needed</li>
+            <li>Cmd+K search</li>
+            <li>Auto-archive at 30 days</li>
+            <li>10-pile soft cap (warning, not a wall)</li>
+          </ul>
+          <a class="btn btn-ghost" data-cws-url href="#">Add to Chrome</a>
+        </article>
+
+        <article class="price-card price-monthly">
+          <h3>Pro Monthly</h3>
+          <p class="price">$5<span>/mo</span></p>
+          <ul>
+            <li>Everything in Free</li>
+            <li>Cloud sync across devices</li>
+            <li>Per-tab notes</li>
+            <li>Full-text snapshot search</li>
+            <li>No active-pile cap</li>
+          </ul>
+          <a class="btn btn-primary" data-ls-product="monthly" href="#">Subscribe — $5/mo</a>
+        </article>
+
+        <article class="price-card price-yearly">
+          <h3>Pro Yearly</h3>
+          <p class="price">$40<span>/yr</span></p>
+          <p class="savings">save 33% vs. monthly</p>
+          <ul>
+            <li>Everything in Pro Monthly</li>
+            <li>One bill, one less thing to think about</li>
+          </ul>
+          <a class="btn btn-primary" data-ls-product="yearly" href="#">Subscribe — $40/yr</a>
+        </article>
+
+        <article class="price-card price-lifetime featured">
+          <span class="badge">Best value</span>
+          <h3>Pro Lifetime</h3>
+          <p class="price">$79<span>once</span></p>
+          <p class="savings">never another bill</p>
+          <ul>
+            <li>Everything in Pro Yearly</li>
+            <li>Lifetime updates</li>
+            <li>Pays back in &lt;2 years vs. monthly</li>
+          </ul>
+          <a class="btn btn-primary" data-ls-product="lifetime" href="#">Buy — $79 lifetime</a>
+        </article>
+      </div>
+      <p class="micro center">All Pro tiers come with a 14-day refund window, no questions asked. Payments handled by Lemon Squeezy (Merchant of Record — handles VAT &amp; sales tax for you).</p>
+    </section>
+
+    <section id="privacy" class="privacy">
+      <h2>Privacy isn&rsquo;t a feature. It&rsquo;s the default.</h2>
+      <div class="privacy-grid">
+        <div>
+          <h3>Free tier</h3>
+          <p>Your piles, tabs, and tags live in your browser&rsquo;s local IndexedDB. The free tier never contacts any server. No analytics, no telemetry, no ad networks. We do not know how you use it. We do not want to.</p>
+        </div>
+        <div>
+          <h3>Pro tier</h3>
+          <p>Cloud sync sends pile data only to a Cloudflare Workers endpoint we operate, for the purpose of syncing between your own devices. No third parties. No selling, no sharing. Cancel anytime and your cloud data is purged within 30 days.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a href="/" class="brand">
+        <img src="/icon.svg" alt="" width="22" height="22" />
+        <span>Tab Piles</span>
+      </a>
+      <p class="micro">&copy; <span id="year"></span> Tab Piles. Built for people who think with their browser.</p>
+    </div>
+    <nav>
+      <a href="/legal/privacy.html">Privacy policy</a>
+      <a href="/legal/terms.html">Terms</a>
+      <a href="mailto:support@tabpiles.app">Support</a>
+    </nav>
+  </footer>
+
+  <script src="/main.js" type="module"></script>
+</body>
+</html>
