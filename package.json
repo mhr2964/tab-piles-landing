@@ -1,0 +1,10 @@
+{
+  "name": "tab-piles-landing",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/preview.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}

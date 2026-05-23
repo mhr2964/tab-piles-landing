@@ -1,6 +1,6 @@
 # HANDOFF — tab-piles-landing
 
-Static landing page for tabpiles.app. Single-page sales site + legal stubs. No backend, no build step.
+Static landing page hosted at the free `tabpiles.pages.dev` Cloudflare Pages subdomain. Single-page sales site + legal stubs. No backend, no build step. Swap to a custom domain later by re-pointing DNS — no code changes needed.
 
 ```yaml
 last-model: claude-opus-4-7
@@ -10,14 +10,16 @@ state: green-pending-deploy
 
 ## Next action — user-blocks
 
-1. **Connect a Cloudflare account** to a git remote for this repo. Pages → Create project → Connect to git → output dir `src/`, no build command. (CF Pages dashboard at <https://dash.cloudflare.com/>.)
-2. **Buy a domain** (e.g. `tabpiles.app`) and point it at the Pages deployment. CF Registrar is fine; Namecheap/Porkbun also fine.
-3. **Create Lemon Squeezy products.** Three variants: `tab-piles-monthly` ($5/mo), `tab-piles-yearly` ($40/yr), `tab-piles-lifetime` ($79 one-time). Enable the "License Keys" add-on on each. Copy each checkout URL.
-4. **Wire the placeholders in `src/main.js`:**
+1. **Connect a Cloudflare account** to a git remote for this repo. Pages → Create project → Connect to git → output dir `src/`, no build command. (CF Pages dashboard at <https://dash.cloudflare.com/>.) Project name picks the subdomain — name it `tabpiles` for `tabpiles.pages.dev`.
+2. **Create Lemon Squeezy products.** Three variants: `tab-piles-monthly` ($5/mo), `tab-piles-yearly` ($40/yr), `tab-piles-lifetime` ($79 one-time). Enable the "License Keys" add-on on each. Set `activation_limit: 5` on every variant. Copy each checkout URL.
+3. **Wire the placeholders in `src/main.js`:**
    - `CWS_URL` — set to the Chrome Web Store URL after CWS approval. Until then it's a 404, no harm.
    - `LS_OVERLAY_URLS.monthly/yearly/lifetime` — paste the per-variant Lemon Squeezy checkout URLs.
-5. **Set the "Last updated" date** in `src/legal/privacy.html` and `src/legal/terms.html` (search for `USER: set on first publish`).
-6. **Pick a support email.** Currently `support@tabpiles.app` everywhere — set up email forwarding for the domain (CF Email Routing is free) before any user hits this.
+4. **Set the "Last updated" date** in `src/legal/privacy.html` and `src/legal/terms.html` (search for `USER: set on first publish`).
+5. **Pick a support email.** Default is `tabpiles.support@gmail.com` everywhere. Three options:
+   - **Free (default).** Sign up for `tabpiles.support@gmail.com` directly. Use as-is.
+   - **Mid.** If/when you buy a real domain, switch to `support@<domain>` via CF Email Routing (free with domain). Search-replace the address across `src/`.
+   - **High.** Custom helpdesk (Helpscout / Pylon / Linear Support). Not needed pre-launch.
 
 ## Local preview
 
