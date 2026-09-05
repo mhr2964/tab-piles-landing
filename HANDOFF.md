@@ -3,20 +3,21 @@
 Static landing page hosted at the free `tabpiles.pages.dev` Cloudflare Pages subdomain. Single-page sales site + legal stubs. No backend, no build step. Swap to a custom domain later by re-pointing DNS — no code changes needed.
 
 ```yaml
-last-model: claude-opus-4-7
-last-session: 2026-05-23
-state: green-pending-deploy
+last-model: claude-sonnet-5
+last-session: 2026-09-05
+state: yellow
 ```
 
-## Next action — user-blocks
+## Next action — user-block (Lemon Squeezy)
 
-1. **Connect a Cloudflare account** to a git remote for this repo. Pages → Create project → Connect to git → output dir `src/`, no build command. (CF Pages dashboard at <https://dash.cloudflare.com/>.) Project name picks the subdomain — name it `tabpiles` for `tabpiles.pages.dev`.
-2. **Create Lemon Squeezy products.** Three variants: `tab-piles-monthly` ($5/mo), `tab-piles-yearly` ($40/yr), `tab-piles-lifetime` ($79 one-time). Enable the "License Keys" add-on on each. Set `activation_limit: 5` on every variant. Copy each checkout URL.
-3. **Wire the placeholders in `src/main.js`:**
+**Live now:** deployed via `wrangler pages deploy` (direct upload, not git-connected) to `https://tabpiles.pages.dev`. Legal page dates are set. Everything left needs Lemon Squeezy, which needs your own identity/payout info:
+
+1. **Create Lemon Squeezy products.** Three variants: `tab-piles-monthly` ($5/mo), `tab-piles-yearly` ($40/yr), `tab-piles-lifetime` ($79 one-time). Enable the "License Keys" add-on on each. Set `activation_limit: 5` on every variant. Copy each checkout URL.
+2. **Wire the placeholders in `src/main.js`:**
    - `CWS_URL` — set to the Chrome Web Store URL after CWS approval. Until then it's a 404, no harm.
    - `LS_OVERLAY_URLS.monthly/yearly/lifetime` — paste the per-variant Lemon Squeezy checkout URLs.
-4. **Set the "Last updated" date** in `src/legal/privacy.html` and `src/legal/terms.html` (search for `USER: set on first publish`).
-5. **Pick a support email.** Default is `tabpiles.support@gmail.com` everywhere. Three options:
+3. Redeploy: `npx wrangler pages deploy src --project-name=tabpiles` (or hand the checkout URLs back and this gets done in one pass with the worker wiring).
+4. **Pick a support email.** Default is `tabpiles.support@gmail.com` everywhere. Three options:
    - **Free (default).** Sign up for `tabpiles.support@gmail.com` directly. Use as-is.
    - **Mid.** If/when you buy a real domain, switch to `support@<domain>` via CF Email Routing (free with domain). Search-replace the address across `src/`.
    - **High.** Custom helpdesk (Helpscout / Pylon / Linear Support). Not needed pre-launch.
@@ -56,6 +57,7 @@ src/
 
 ## Traps
 
+- **Deployed via direct upload, not git-connected Pages.** `git push` to this repo will NOT auto-deploy. Re-run `npx wrangler pages deploy src --project-name=tabpiles` after any `src/` change. (Connecting Pages to the GitHub repo for auto-deploy is a dashboard-only click-through — do that later if the manual redeploy gets annoying.)
 - **`data-cws-url` placeholder** lives in `main.js` — until you set the real CWS URL, all "Add to Chrome" buttons go nowhere. Worth a banner if you launch the landing page before CWS approval.
 - **Lemon Squeezy overlay** depends on `https://app.lemonsqueezy.com/js/lemon.js` being loaded. If the user's network blocks that, the button links still work — they fall back to opening the checkout in a new tab. The fallback is automatic, no code change needed.
 - **Open Graph image** points at `/screenshots/cws-1-hero.png`. Twitter/iMessage previews will render at the 1280x800 aspect — fine.
