@@ -6,9 +6,9 @@
 const CWS_URL = 'https://chrome.google.com/webstore/detail/__CWS_EXTENSION_ID__'
 
 const LS_OVERLAY_URLS = {
-  monthly: 'https://tabpiles.lemonsqueezy.com/checkout/buy/__MONTHLY_VARIANT_ID__',
-  yearly: 'https://tabpiles.lemonsqueezy.com/checkout/buy/__YEARLY_VARIANT_ID__',
-  lifetime: 'https://tabpiles.lemonsqueezy.com/checkout/buy/__LIFETIME_VARIANT_ID__',
+  monthly: 'https://tabpiles.lemonsqueezy.com/checkout/buy/6d8fdb7a-003b-4e6b-825e-57efceda846d',
+  yearly: 'https://tabpiles.lemonsqueezy.com/checkout/buy/49b80af1-ad12-4906-b940-8f711d365f3a',
+  lifetime: 'https://tabpiles.lemonsqueezy.com/checkout/buy/87ccf426-94b1-46cd-9466-38d8360d658f',
 }
 
 document.querySelectorAll('[data-cws-url]').forEach((a) => {
