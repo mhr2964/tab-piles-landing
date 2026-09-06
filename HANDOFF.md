@@ -4,20 +4,18 @@ Static landing page hosted at the free `tabpiles.pages.dev` Cloudflare Pages sub
 
 ```yaml
 last-model: claude-sonnet-5
-last-session: 2026-09-05
+last-session: 2026-09-06
 state: yellow
 ```
 
-## Next action — user-block (Lemon Squeezy)
+## Next action — user-block (CWS + take LS store live)
 
-**Live now:** deployed via `wrangler pages deploy` (direct upload, not git-connected) to `https://tabpiles.pages.dev`. Legal page dates are set. Everything left needs Lemon Squeezy, which needs your own identity/payout info:
+**Live now:** deployed via `wrangler pages deploy` (direct upload, not git-connected) to `https://tabpiles.pages.dev`. Legal page dates are set. `LS_OVERLAY_URLS` in `src/main.js` point at the real Lemon Squeezy checkout links (monthly/yearly/lifetime). Buy buttons will render the LS overlay correctly — but the LS store itself is still in test mode (see `tab-piles-worker/HANDOFF.md`), so checkouts won't charge real money until that's resolved.
 
-1. **Create Lemon Squeezy products.** Three variants: `tab-piles-monthly` ($5/mo), `tab-piles-yearly` ($40/yr), `tab-piles-lifetime` ($79 one-time). Enable the "License Keys" add-on on each. Set `activation_limit: 5` on every variant. Copy each checkout URL.
-2. **Wire the placeholders in `src/main.js`:**
-   - `CWS_URL` — set to the Chrome Web Store URL after CWS approval. Until then it's a 404, no harm.
-   - `LS_OVERLAY_URLS.monthly/yearly/lifetime` — paste the per-variant Lemon Squeezy checkout URLs.
-3. Redeploy: `npx wrangler pages deploy src --project-name=tabpiles` (or hand the checkout URLs back and this gets done in one pass with the worker wiring).
-4. **Pick a support email.** Default is `tabpiles.support@gmail.com` everywhere. Three options:
+Remaining:
+
+1. **`CWS_URL`** — still a placeholder until the extension clears Chrome Web Store review (Day 5+ per `LAUNCH.md`).
+2. **Pick a support email.** Default is `tabpiles.support@gmail.com` everywhere. Three options:
    - **Free (default).** Sign up for `tabpiles.support@gmail.com` directly. Use as-is.
    - **Mid.** If/when you buy a real domain, switch to `support@<domain>` via CF Email Routing (free with domain). Search-replace the address across `src/`.
    - **High.** Custom helpdesk (Helpscout / Pylon / Linear Support). Not needed pre-launch.
